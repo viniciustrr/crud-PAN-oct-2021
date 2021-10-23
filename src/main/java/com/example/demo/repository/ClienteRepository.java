@@ -12,6 +12,10 @@ public interface ClienteRepository extends JpaRepository<ClienteModel, Long>{
 	@Query(value="SELECT * FROM CLIENTE_MODEL u WHERE u.tipo = :tipo ", nativeQuery = true)
 	List<ClienteModel> procurarTipoPessoas(Integer tipo);
 	
-	//@Query(value="SELECT * FROM CLIENTE_MODEL", nativeQuery = true)
-	//List<ClienteModel> procurarTodos();
+	@Query(value = "SELECT * FROM CLIENTE_MODEL c  ", nativeQuery = true)
+	List<ClienteModel> procuraTodos();
+	
+	@Query(value = "SELECT * FROM CLIENTE_MODEL c ORDER BY c.nome ", nativeQuery = true)
+	List<ClienteModel> procuraTodosAlfabetico();
+	
 }

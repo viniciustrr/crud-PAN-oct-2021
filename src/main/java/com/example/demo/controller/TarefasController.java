@@ -64,6 +64,14 @@ public class TarefasController {
 	}
 	
 	
+	@PutMapping("/atualizar/tab/{id}")
+	public TarefasModel atualizar(@PathVariable Long id, @RequestBody TarefasModel model) {
+		model.setId(id);
+		tarefasRepository.save(model);
+		return model;
+	}
+	
+	
 
 	
 	

@@ -36,6 +36,16 @@ public class ClienteController {
 		return ResponseEntity.ok(clienteRepository.procurarTipoPessoas(tipo));
 	}
 	
+	@GetMapping("/listar/clientes/sql/alfabetico")
+	public List<ClienteModel> procuraTodosAlfabetico() {
+		return clienteRepository.procuraTodosAlfabetico();
+	}
+	
+	@GetMapping("/listar/clientes/sql")
+	public List<ClienteModel> procuraTodos() {
+		return clienteRepository.procuraTodos();
+	}
+	
 	
 	
 	
